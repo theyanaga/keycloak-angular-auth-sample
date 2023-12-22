@@ -22,6 +22,7 @@ export class AuthGuard extends KeycloakAuthGuard {
       });
     }
 
+    this.keycloak.loadUserProfile(false).then(data => console.log(data.email));
     return this.authenticated;
   }
 
